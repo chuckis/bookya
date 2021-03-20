@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
+from shelf.views import BookList
+
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', BookList.as_view()),
 ]

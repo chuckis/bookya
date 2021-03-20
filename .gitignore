@@ -60,6 +60,7 @@ coverage.xml
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+media/
 
 # Flask stuff:
 instance/
@@ -104,6 +105,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+env/
 bookya-env/
 venv/
 ENV/
