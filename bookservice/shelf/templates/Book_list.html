@@ -3,15 +3,15 @@
     <h2>Books</h2>
     <ul>
         {% for book in object_list %}
-                <div class="item">
-                     <img class="lazy" src="{{ book.photo.url }}"
-                     data-mfp-src="{{ book.photo.url }}" 
-                     data-effect="mfp-zoom-in">
-
-                  {{ book.title }} 
-                  {{ book.description }}
-                  {{ book.price }}
-                </div>
+                <li><input type="checkbox" name=" ">
+                    <div class="item">
+                    <img class="lazy" src="{{ book.photo.url }}"
+                    data-mfp-src="{{ book.photo.url }}" 
+                    data-effect="mfp-zoom-in">
+                    {{ book.title }} 
+                    {{ book.description }}
+                    {{ book.price }}
+                    </div></li>
         {% endfor %}
     </ul>
 {% endblock %}
