@@ -1,9 +1,9 @@
 
 {% block content %}
     <h2>Books</h2>
-    <ul>
+    <ul><form action="/make_feed/"  method="post">{{ form.as_ul }}
         {% for book in object_list %}
-                <li><input type="checkbox" name=" ">
+                <input type="checkbox" name=" ">
                     <div class="item">
                     <img class="lazy" src="{{ book.photo.url }}"
                     data-mfp-src="{{ book.photo.url }}" 
@@ -11,7 +11,10 @@
                     {{ book.title }} 
                     {{ book.description }}
                     {{ book.price }}
-                    </div></li>
+                    </div>
+                   
         {% endfor %}
+        <input type="submit" value="Создать фид">
+    </form>
     </ul>
 {% endblock %}

@@ -1,5 +1,10 @@
 from django import forms
-from models import Book
+from .models import Book
 
-class BookListCheckboxMultipleChoiceForm(forms.CheckboxSelectMultiple):
-    pass
+
+class CheckboxSelectionForm(forms.Form):
+    item = forms.CheckboxInput()
+
+    def make_feed(self):
+        # send email using the self.cleaned_data dictionary
+        pass
