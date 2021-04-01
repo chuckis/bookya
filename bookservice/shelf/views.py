@@ -2,13 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView
 from django.views.generic.edit import FormView
-from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from .models import Book
 from .forms import CheckboxSelectionForm
 
-@login_required()
+
 class BookList(ListView, FormView):
     model = Book
     form_class = CheckboxSelectionForm
