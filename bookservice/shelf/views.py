@@ -33,3 +33,6 @@ class BookDelete(DeleteView):
     model = Book
     success_url = reverse_lazy('book-list')
     
+
+def showhelp(request):
+    raise Exception('Django middleware')
