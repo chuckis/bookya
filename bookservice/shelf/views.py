@@ -1,21 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView
-from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from .models import Book
-from .forms import CheckboxSelectionForm
 
 
-class BookList(ListView, FormView):
+
+class BookList(ListView):
     model = Book
-    form_class = CheckboxSelectionForm
     template_name = 'Book_list.html'
-
-    def form_invalid(self, form):
-        form.make_feed
-        return super().form_valid(form)
 
 class BookCreate(CreateView):
     model = Book
