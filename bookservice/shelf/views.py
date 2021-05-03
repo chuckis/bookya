@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views.generic import ListView
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
-from .models import Book
+from .models import Book, BookInstance
 
 
 
@@ -30,3 +30,8 @@ class BookDelete(DeleteView):
 
 def showhelp(request):
     raise Exception('Django middleware')
+
+
+class IndexView(ListView):
+    model = BookInstance
+    template_name = 'index.html'

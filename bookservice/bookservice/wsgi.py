@@ -11,7 +11,8 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-bookservice.settings.configure()
-#os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bookservice.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bookservice.settings')
+
+#bookservice.settings.configure()
 
 application = get_wsgi_application()

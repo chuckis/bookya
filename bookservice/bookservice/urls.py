@@ -19,7 +19,11 @@ from django.contrib.auth import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.contrib.auth.decorators import login_required
+from shelf.views import IndexView
+
 urlpatterns = [
+    path('', login_required(IndexView.as_view()), name='index-view'),
     path('shelf/', include('shelf.urls')),
     path('admin/', admin.site.urls),
     path('accounts/login/', views.LoginView.as_view(), name='login'),
