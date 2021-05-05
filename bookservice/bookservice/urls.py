@@ -23,7 +23,7 @@ from django.contrib.auth.decorators import login_required
 from shelf.views import IndexView
 
 urlpatterns = [
-    path('', login_required(IndexView.as_view()), name='index-view'),
+    path('', login_required(IndexView.as_view(), redirect_field_name='login'), name='index-view'),
     path('shelf/', include('shelf.urls')),
     path('admin/', admin.site.urls),
     path('accounts/login/', views.LoginView.as_view(), name='login'),

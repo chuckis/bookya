@@ -35,3 +35,4 @@ def showhelp(request):
 class IndexView(ListView):
     model = BookInstance
     template_name = 'index.html'
+    
