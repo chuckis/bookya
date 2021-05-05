@@ -12,6 +12,7 @@ import shelf.views as views
 class TestBookListView:
     def test_anonymous(self):
         req = RequestFactory().get('/shelf')
+        req.user = AnonymousUser()
         resp = views.BookList.as_view()(req)
         assert resp.status_code == 200, 'Should be callable by anyone'
 
@@ -22,8 +23,5 @@ class TestIndexView:
     - кому
     - когда вернут
     """
-    def test_anonymous(self):
-        req = RequestFactory().get('/')
-        req.user = AnonymousUser()
-        resp = views.IndexView.as_view()(req)
-        assert 'login' in resp.url, 'Should redirect to login'
+    
+        
